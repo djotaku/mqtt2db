@@ -12,7 +12,7 @@ print(f"measurementname:{measurementname}")
 topics = ['outTopic','smoker/temp','smoker/WiFi/#']
 
 #database setup
-datebasename = "smoker"
+databasename = "smoker"
 client = InfluxDBClient(host='tanukimario', port=8086)
 for databases in client.get_list_database():
     if databases['name'] == databasename:
