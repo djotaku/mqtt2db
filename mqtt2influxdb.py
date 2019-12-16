@@ -4,7 +4,6 @@ from datetime import datetime
 
 #time setup
 now = datetime.now()
-dt_string_normal = now.strftime("%Y-%m-%dT%H:%M:%S")
 date_string = now.strftime("%Y-%m-%d")
 measurementname = f'smoker-{date_string}'
 print(f"measurementname:{measurementname}")
@@ -27,6 +26,7 @@ while True:
         if message.topic == "smoker/temp":
             tempC = int(message.payload)
             tempF = 9.0/5.0 * int(message.payload)+32
+            dt_string_normal = now.strftime("%Y-%m-%dT%H:%M:%S")
             print(f"Message Recieved at: {dt_string_normal}")
             print(f'{message.topic}:{tempC}° C')
             print(f'{message.topic}:{tempF}° F')
